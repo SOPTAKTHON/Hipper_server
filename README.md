@@ -128,7 +128,7 @@ path: /api/auth
 }
 ```
 ### 회원가입
-path: api/users
+path: /api/users
 - 성공
 ```
 {
@@ -174,7 +174,7 @@ path: api/users
 }
 ```
 ### 운동
-path: exercise
+path: /api/exercise
 - 성공
 ```
 {
