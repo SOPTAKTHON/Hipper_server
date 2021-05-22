@@ -70,7 +70,10 @@ router.post(
           res.status(200).json({
             status: returnCode.OK,
             msg: "로그인 성공.",
-            token
+            data: {
+              email,
+              token
+            }
           });
         }
       );

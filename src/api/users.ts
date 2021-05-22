@@ -77,7 +77,11 @@ router.post(
           if (err) throw err;
           res.status(200).json({
             status: returnCode.OK,
-            msg: "회원가입에 성공했습니다." ,
+            msg: "회원가입에 성공했습니다.",
+            data : {
+              email,
+              nickname
+            }
           });
         }
       );
