@@ -47,6 +47,7 @@ router.post(
       }
       // 2. 적합하지 않은 password
       const isMatch = await bcrypt.compare(password, user.password);
+      const nickname = user.nickname;
       if (!isMatch) {
         res.status(400).json({
           status: returnCode.BAD_REQUEST,
@@ -72,6 +73,7 @@ router.post(
             msg: "로그인 성공.",
             data: {
               email,
+              nickname,
               token
             }
           });
