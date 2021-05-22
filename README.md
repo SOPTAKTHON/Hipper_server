@@ -1,4 +1,6 @@
 # HIPPER
+<p align="center"><img src="https://user-images.githubusercontent.com/54926663/119240676-3a212b80-bb8c-11eb-9971-1e7325479fe5.png" alt="아이콘" width="40%" /></p>
+
 [서버 파트 공유 노션](https://www.notion.so/90fa48cea985416b8aaec66ccb2d4f36)
 ## 서비스 이름
 
