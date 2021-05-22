@@ -1,11 +1,11 @@
 export interface IUser {
-  name: string;
+  nickname: string;
   email: string;
   password: string;
 }
 
 export interface IUserInputDTO {
-  name: string;
+  nickname: string;
   email: string;
   password: string;
 }
