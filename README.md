@@ -81,8 +81,24 @@ export interface IExercise {
   }
  ```
 ## API 명세서
-### 로그인
-path: /api/auth
+### [POST] 로그인
+path: 54.180.153.139:5000/api/auth
+- 요청 헤더
+
+  ```Content-Type: application/json```
+
+- 요청 바디
+
+  | Key        | 타입   | 설명     |
+  | ---------- | ------ | -------- |
+  | `email`    | String | 이메일   |
+  | `password` | String | 비밀번호 |
+
+- 응답 바디
+  | Key     | 타입   | 설명                      |
+| ------- | ------ | ------------------------- |
+| `email` | String | 이메일                    |
+| `token` | String | 로그인 정보 들어있는 토큰 |
 - 성공
 ```
 {
