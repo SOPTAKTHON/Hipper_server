@@ -1,9 +1,7 @@
 # HIPPER
 <p align="center"><img src="https://user-images.githubusercontent.com/54926663/119240676-3a212b80-bb8c-11eb-9971-1e7325479fe5.png" alt="아이콘" width="40%" /></p>
-
 [서버 파트 공유 노션](https://www.notion.so/90fa48cea985416b8aaec66ccb2d4f36)
 ## 서비스 이름
-
 HIPPER
 ## 서비스 소개
 
@@ -274,3 +272,7 @@ path: 54.180.153.139:5000/api/exercise
     ]
 }
 ```
+
+## View
+<p align="center">![view](https://user-images.githubusercontent.com/54926663/119240911-0e9f4080-bb8e-11eb-94d8-e36617913800.JPG),/p>
+
