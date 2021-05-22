@@ -86,21 +86,21 @@ path: /api/auth
 - 성공
 ```
 {
-    ""status"": 200,
-    ""msg"": ""로그인 성공."",
-    ""data"": {
-        ""email"": ""test16@naver.com"",
-        ""token"": ""eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhOTJkZTc1MmFiNTM2NGE4YTI2M2M2In0sImlhdCI6MTYyMTcwMDE2MiwiZXhwIjoxNjIxNzM2MTYyfQ.eB4ouEmRnwQ835uKK3S44wb7wvqYYcR7_xS2ndMrkjo""
+    "status": 200,
+    "msg": "로그인 성공.",
+    "data": {
+        "email": "test16@naver.com",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhOTJkZTc1MmFiNTM2NGE4YTI2M2M2In0sImlhdCI6MTYyMTcwMDE2MiwiZXhwIjoxNjIxNzM2MTYyfQ.eB4ouEmRnwQ835uKK3S44wb7wvqYYcR7_xS2ndMrkjo"
     }
 }	
 ```
 - 실패: 요청바디 없음
 ```
 {
-    ""status"": 400,
-    ""errors"": [
+    "status": 400,
+    "errors": [
         {
-            ""msg"": ""요청바디가 없습니다.""
+            "msg": "요청바디가 없습니다."
         }
     ]
 }
@@ -108,10 +108,10 @@ path: /api/auth
 - invalid email
 ```
 {
-    ""status"": 400,
-    ""errors"": [
+    "status": 400,
+    "errors": [
         {
-            ""msg"": ""Invalid Credentials.""
+            "msg": "Invalid Credentials."
         }
     ]
 }
@@ -119,10 +119,10 @@ path: /api/auth
 - invalid password
 ```
 {
-    ""status"": 400,
-    ""errors"": [
+    "status": 400,
+    "errors": [
         {
-            ""msg"": ""Invalid Credentials.""
+            "msg"": ""Invalid Credentials."
         }
     ]
 }
@@ -132,21 +132,21 @@ path: api/users
 - 성공
 ```
 {
-    ""status"": 200,
-    ""msg"": ""회원가입에 성공했습니다."",
-    ""data"": {
-        ""email"": ""test16@naver.com"",
-        ""nickname"": ""test16""
+    "status": 200,
+    "msg": "회원가입에 성공했습니다.",
+    "data": {
+        "email": "test16@naver.com",
+        "nickname": "test16"
     }
 }
 ```
 - 중복된 아이디 존재
 ```
 {
-    ""status"": 400,
-    ""errors"": [
+    "status": 400,
+    "errors": [
         {
-            ""msg"": ""User already exists""
+            "msg": "User already exists"
         }
     ]
 }
@@ -154,10 +154,10 @@ path: api/users
 - 빈 바디 post
 ```
 {
-    ""status"": 400,
-    ""errors"": [
+    "status": 400,
+    "errors": [
         {
-            ""msg"": ""요청바디가 없습니다.""
+            "msg": ""요청바디가 없습니다."
         }
     ]
 }
@@ -165,10 +165,10 @@ path: api/users
 - 서버 오류
 ```
 {
-    ""status"": 500,
-    ""errors"": [
+    "status": 500,
+    "errors": [
         {
-            ""msg"": ""server error""
+            "msg": "server error"
         }
     ]
 }
@@ -178,11 +178,11 @@ path: exercise
 - 성공
 ```
 {
-    ""status"": 200,
-    ""data"": [
+    "status": 200,
+    "data": [
         15,
-        ""런지"",
-        ""10개""
+        "런지",
+        "10개"
     ]
 }
 ```
@@ -190,10 +190,10 @@ path: exercise
 
 ```
 {
-    ""status"": 500,
-    ""errors"": [
+    "status": 500,
+    "errors": [
         {
-            ""msg"": ""server error""
+            "msg": "server error"
         }
     ]
 }
@@ -201,10 +201,10 @@ path: exercise
 - 값 불러오기 실패
 ```
 {
-    ""status"": 400,
-    ""errors"": [
+    "status": 400,
+    "errors": [
         {
-            ""msg"": ""값을 불러오지 못했습니다.""
+            "msg": "값을 불러오지 못했습니다."
         }
     ]
 }
