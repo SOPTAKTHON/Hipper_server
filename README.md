@@ -144,7 +144,27 @@ path: 54.180.153.139:5000/api/auth
 }
 ```
 ### 회원가입
-path: /api/users
+path: 54.180.153.139:5000/api/users
+- 요청 헤더
+
+  ```Content-Type: application/json```
+
+- 요청 바디
+
+  | Key        | 타입   | 설명     |
+  | ---------- | ------ | -------- |
+  | `email`    | String | 이메일   |
+  | `password` | String | 비밀번호 |
+  | `nickname` | String | 닉네임   |
+
+- 응답 바디
+
+  | Key        | 타입   | 설명   |
+  | ---------- | ------ | ------ |
+  | `email`    | String | 이메일 |
+  | `nickname` | String | 닉네임 |
+
+
 - 성공
 ```
 {
