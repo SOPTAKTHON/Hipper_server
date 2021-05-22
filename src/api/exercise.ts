@@ -24,12 +24,14 @@ import Exercise from "../models/Exercise";
             res.status(400).json({
                 status: returnCode.BAD_REQUEST,
                 errors: [{ msg: "값을 불러오지 못했습니다." }],
-              });
+            });
         }
-        
+
         res.status(200).json({
             status: returnCode.OK,
-            data: [exercise.exercise_idx, exercise.exercise_name, exercise.exercise_cnt],
+            data: {
+                exercise,
+              }
           });
     } catch (error) {
         console.error(error.message);
