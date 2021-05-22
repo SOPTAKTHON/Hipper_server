@@ -245,11 +245,14 @@ path: 54.180.153.139:5000/api/exercise
 ```
 {
     "status": 200,
-    "data": [
-        15,
-        "런지",
-        "10개"
-    ]
+    "data": {
+        "exercise": {
+            "_id": "60a9540364ece87b609fdf66",
+            "exercise_idx": 15,
+            "exercise_name": "런지",
+            "exercise_cnt": "10개"
+        }
+    }
 }
 ```
 - 서버 오류
