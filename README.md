@@ -210,7 +210,20 @@ path: 54.180.153.139:5000/api/users
 }
 ```
 ### 운동
-path: /api/exercise
+path: 54.180.153.139:5000/api/exercise
+- 요청 헤더
+
+  ```Content-Type: application/json```
+
+- 요청바디
+
+- 응답 바디
+
+  | Key             | 타입   | 설명      |
+  | --------------- | ------ | --------- |
+  | `exercise_idx`  | Number | 인덱스    |
+  | `exercise_name` | String | 운동 종목 |
+  | `exercise_cnt`  | String | 운동 횟수 |
 - 성공
 ```
 {
