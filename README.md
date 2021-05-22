@@ -1,14 +1,12 @@
 # HIPPER
 
-## 1차 제출 자료
-
-### 서비스 이름
+## 서비스 이름
 
 HIPPER
-### 서비스 소개
+## 서비스 소개
 
 힙-하! 당신의 HIP한 기억을 되돌려 드립니다.
-### models
+## models
 - models/User
 ```import mongoose from "mongoose";
 import { IUser } from "../interfaces/IUser";
@@ -82,4 +80,94 @@ export interface IExercise {
     exercise_cnt: string;
   }
  ```
-### API 명세서
+## API 명세서
+### 로그인
+- 성공
+```
+"{
+    ""status"": 200,
+    ""msg"": ""로그인 성공."",
+    ""data"": {
+        ""email"": ""test16@naver.com"",
+        ""token"": ""eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjBhOTJkZTc1MmFiNTM2NGE4YTI2M2M2In0sImlhdCI6MTYyMTcwMDE2MiwiZXhwIjoxNjIxNzM2MTYyfQ.eB4ouEmRnwQ835uKK3S44wb7wvqYYcR7_xS2ndMrkjo""
+    }
+}"	
+```
+- 실패: 요청바디 없음
+```
+"{
+    ""status"": 400,
+    ""errors"": [
+        {
+            ""msg"": ""요청바디가 없습니다.""
+        }
+    ]
+}"
+```
+- invalid email
+```
+"{
+    ""status"": 400,
+    ""errors"": [
+        {
+            ""msg"": ""Invalid Credentials.""
+        }
+    ]
+}"
+```
+- invalid password
+```
+"{
+    ""status"": 400,
+    ""errors"": [
+        {
+            ""msg"": ""Invalid Credentials.""
+        }
+    ]
+}"
+```
+### 회원가입
+- 성공
+```
+"{
+    ""status"": 200,
+    ""msg"": ""회원가입에 성공했습니다."",
+    ""data"": {
+        ""email"": ""test16@naver.com"",
+        ""nickname"": ""test16""
+    }
+}"	
+```
+- 중복된 아이디 존재
+```
+"{
+    ""status"": 400,
+    ""errors"": [
+        {
+            ""msg"": ""User already exists""
+        }
+    ]
+}"
+```
+- 빈 바디 post
+```
+"{
+    ""status"": 400,
+    ""errors"": [
+        {
+            ""msg"": ""요청바디가 없습니다.""
+        }
+    ]
+}"
+```
+- 서버 오류
+```
+"{
+    ""status"": 500,
+    ""errors"": [
+        {
+            ""msg"": ""server error""
+        }
+    ]
+}"	
+```
