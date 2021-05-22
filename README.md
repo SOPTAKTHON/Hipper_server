@@ -82,6 +82,7 @@ export interface IExercise {
  ```
 ## API 명세서
 ### 로그인
+path: /api/auth
 - 성공
 ```
 "{
@@ -127,6 +128,7 @@ export interface IExercise {
 }"
 ```
 ### 회원가입
+path: api/users
 - 성공
 ```
 "{
@@ -172,6 +174,7 @@ export interface IExercise {
 }"	
 ```
 ### 운동
+path: exercise
 - 성공
 ```
 "{
