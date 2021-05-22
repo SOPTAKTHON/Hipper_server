@@ -29,7 +29,9 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model<IUser & mongoose.Document>("User", UserSchema);```
+export default mongoose.model<IUser & mongoose.Document>("User", UserSchema);
+```
+
 - exercise
 ```import mongoose from "mongoose";
 import { IExercise } from "../interfaces/IExercise";
