@@ -7,60 +7,52 @@ const returnCode = require('../library/returnCode');
 
 const router = express.Router();
 
+import auth from "../middleware/auth";
 import User from "../models/User";
 
 /**
- *  @route Post api/users
- *  @desc Register User
+ *  @route Post api/auth
+ *  @desc Authenticate user & get token(로그인)
  *  @access Public
- *  @회원가입
+ *  @로그인
  * 
- *  error
- *  1. 유저가 중복일 경우
+ * // 1. 적합하지 않은 email
+ * // 2. 적합하지 않은 password
  */
 router.post(
   "/",
   [
-    check("nickname", "Nickname is required").not().isEmpty(),
     check("email", "Please include a valid email").isEmail(),
-    check(
-      "password",
-      "Please enter a password with 6 or more characters"
-    ).isLength({ min: 6 }),
+    check("password", "Password is required").exists(),
   ],
   async (req: Request, res: Response) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      res.status(400).json({
+      return res.status(400).json({
         status: returnCode.BAD_REQUEST,
         errors: [{ msg: "요청바디가 없습니다." }],
       });
     }
-
-    const { nickname, email, password } = req.body;
+    const { email, password } = req.body;
 
     try {
-      // See if  user exists
-      //  1. 유저가 중복일 경우
       let user = await User.findOne({ email });
 
-      if (user) {
+      // 1. 적합하지 않은 email
+      if (!user) {
         res.status(400).json({
           status: returnCode.BAD_REQUEST,
-          errors: [{ msg: "User already exists" }],
+          errors: [{ msg: "Invalid Credentials." }],
         });
       }
-
-      user = new User({
-        nickname,
-        email,
-        password,
-      });
-
-      // Encrpyt password
-      const salt = await bcrypt.genSalt(10);
-      user.password = await bcrypt.hash(password, salt);
-
+      // 2. 적합하지 않은 password
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        res.status(400).json({
+          status: returnCode.BAD_REQUEST,
+          errors: [{ msg: "Invalid Credentials." }],
+        });
+      }
       await user.save();
 
       // Return jsonwebtoken
@@ -77,7 +69,8 @@ router.post(
           if (err) throw err;
           res.status(200).json({
             status: returnCode.OK,
-            msg: "회원가입에 성공했습니다." ,
+            msg: "로그인 성공.",
+            token
           });
         }
       );
@@ -90,5 +83,20 @@ router.post(
     }
   }
 );
+
+/*
+ *  @route GET api/auth
+ *  @desc Test Route
+ *  @access Public
+ */
+router.get("/", auth, async function (req: Request, res: Response) {
+  try {
+    const user = await User.findById(req.body.user.id).select("-password");
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Err");
+  }
+});
 
 module.exports = router;
