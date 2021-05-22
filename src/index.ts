@@ -10,9 +10,8 @@ app.use(express.json());
 
 // Define Routes
 app.use("/api/users", require("./api/users")); //회원가입
-// app.use("/api/profile", require("./api/profile"));
-// app.use("/api/posts", require("./api/post"));
- app.use("/api/auth", require("./api/auth")); // 로그인
+app.use("/api/exercise", require("./api/exercise")); // 운동데이터
+app.use("/api/auth", require("./api/auth")); // 로그인
 
 // error handler
 app.use(function (err, req, res, next) {
