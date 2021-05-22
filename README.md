@@ -8,7 +8,8 @@ HIPPER
 힙-하! 당신의 HIP한 기억을 되돌려 드립니다.
 ## models
 - models/User
-```import mongoose from "mongoose";
+```
+import mongoose from "mongoose";
 import { IUser } from "../interfaces/IUser";
 
 const UserSchema = new mongoose.Schema({
@@ -31,7 +32,8 @@ export default mongoose.model<IUser & mongoose.Document>("User", UserSchema);
 ```
 
 - interfaces/IUser
-```export interface IUser {
+```
+export interface IUser {
   nickname: string;
   email: string;
   password: string;
@@ -44,7 +46,8 @@ export interface IUserInputDTO {
 }
 ```
 - models/Exercise
-```import mongoose from "mongoose";
+```
+import mongoose from "mongoose";
 import { IExercise } from "../interfaces/IExercise";
 
 
