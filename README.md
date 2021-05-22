@@ -1,5 +1,5 @@
 # HIPPER
-
+[서버 파트 공유 노션](https://www.notion.so/90fa48cea985416b8aaec66ccb2d4f36)
 ## 서비스 이름
 
 HIPPER
